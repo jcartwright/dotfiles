@@ -2,6 +2,116 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [12.6.1](https://github.com/dkarter/dotfiles/compare/v12.6.0...v12.6.1) (2023-11-27)
+
+
+### Bug Fixes
+
+* **nvim:** remove lazy loading for treesitter ([5c41011](https://github.com/dkarter/dotfiles/commit/5c4101129c0e02a54d8caa3835aa62b5d3edbbc3))
+
+## [12.6.0](https://github.com/dkarter/dotfiles/compare/v12.5.0...v12.6.0) (2023-11-20)
+
+
+### Features
+
+* **nvim:** add peek definition to treesitter text objects ([6f2c860](https://github.com/dkarter/dotfiles/commit/6f2c860e40c3abcfb69a7f530c24bd5137c5d19f))
+* **nvim:** add treesitter scope textobjects ([5b683d6](https://github.com/dkarter/dotfiles/commit/5b683d6a9af2ee39c0aec8df75276da144be7f87))
+
+
+### Bug Fixes
+
+* **nvim:** fix deprecated config for context-commentstring ([f2791ed](https://github.com/dkarter/dotfiles/commit/f2791ed2ec03427da521643b32a89a3dbf40eace))
+
+## [12.5.0](https://github.com/dkarter/dotfiles/compare/v12.4.2...v12.5.0) (2023-10-27)
+
+
+### Features
+
+* **installer:** add codespell ([a7dd2d4](https://github.com/dkarter/dotfiles/commit/a7dd2d427525ae038d382baa9ca4903581994f13))
+* **installer:** add Taskfile ([31af44b](https://github.com/dkarter/dotfiles/commit/31af44b270aa2965fd3885b9da737cb19269275a))
+
+## [12.4.2](https://github.com/dkarter/dotfiles/compare/v12.4.1...v12.4.2) (2023-10-27)
+
+
+### Bug Fixes
+
+* **nvim:** disable SHAred DAta writing to fix annoying notifs ([e02a4d6](https://github.com/dkarter/dotfiles/commit/e02a4d680e31e21ae398cb635c6a7a16368daaf5))
+* **nvim:** helm file support ([f5bee17](https://github.com/dkarter/dotfiles/commit/f5bee17d30ab3bbd962c42271124ae93fbf67e56))
+
+## [12.4.1](https://github.com/dkarter/dotfiles/compare/v12.4.0...v12.4.1) (2023-10-16)
+
+
+### Bug Fixes
+
+* remove SHADA config ([39dde29](https://github.com/dkarter/dotfiles/commit/39dde298800227d5a09158dcc97e481ba171b53e))
+
+## [12.4.0](https://github.com/dkarter/dotfiles/compare/v12.3.3...v12.4.0) (2023-10-02)
+
+
+### Features
+
+* add LSP rename mapping ([7b7a0e8](https://github.com/dkarter/dotfiles/commit/7b7a0e872b05154c582b8c9e7843d9bdb5466d50))
+* **git:** enable diff3 conflict style ([00a31fc](https://github.com/dkarter/dotfiles/commit/00a31fc3dc46bb50009f1c768fd5e224d7f1035b))
+* **installer:** add additional duti mappings ([88980ea](https://github.com/dkarter/dotfiles/commit/88980ea9611e8e6734ef7f4b30dcbb79715a1e28))
+* **nvim:** add CSV syntax highlighting ([69df162](https://github.com/dkarter/dotfiles/commit/69df16233ce4dccf055d270cd27321ee79322a9e))
+* **nvim:** add xml formatting via xq ([dca0c29](https://github.com/dkarter/dotfiles/commit/dca0c29482774aa422a7795a2c8d154385953ad0))
+* **nvim:** add xml synxtax highlighting via TreeSitter ([86e0a9b](https://github.com/dkarter/dotfiles/commit/86e0a9b7580aaa712a5c25b68f26198e0e126b87))
+
+
+### Bug Fixes
+
+* **nvim:** migrate indent-blankline config to v3 ([8fa98e6](https://github.com/dkarter/dotfiles/commit/8fa98e65b62e26c40f9f3125333ed5e125dcd5fd))
+* **nvim:** remove deprecated setting for indent-blankline ([9063f38](https://github.com/dkarter/dotfiles/commit/9063f38d398644587d666ac8ab2f30b702de1de9))
+* remove personal info from gitconfig ([cc8fdba](https://github.com/dkarter/dotfiles/commit/cc8fdba6340d40f53a121b244352ac41710c7a80))
+* **zsh,nvr:** don't use NVIM_LISTEN_ADDRESS ([7bf5598](https://github.com/dkarter/dotfiles/commit/7bf5598b34eca29496d58e199aa065c36d1ad96a))
+* **zsh,nvr:** improve behavior for ECTO_EDITOR ([7a18d1a](https://github.com/dkarter/dotfiles/commit/7a18d1a922d51231df7a2cac063eed4c8ef5fd49))
+
+## [12.3.3](https://github.com/dkarter/dotfiles/compare/v12.3.2...v12.3.3) (2023-09-15)
+
+
+### Bug Fixes
+
+* **nvim:** annoying indentation for comments in Elixir ([546eeb0](https://github.com/dkarter/dotfiles/commit/546eeb09e67221685db4889c226199c33e35bcb8))
+
+## [12.3.2](https://github.com/dkarter/dotfiles/compare/v12.3.1...v12.3.2) (2023-09-15)
+
+
+### Bug Fixes
+
+* **asdf:** add Golang env var for ASDF ([a40d79f](https://github.com/dkarter/dotfiles/commit/a40d79f24f5263f6ce2362b225042138c0ff03f8))
+* **zsh:** enable interactive comments ([b2a234f](https://github.com/dkarter/dotfiles/commit/b2a234fda4f6b9d33a4cb30b83d49c75275e2992))
+
+## [12.3.1](https://github.com/dkarter/dotfiles/compare/v12.3.0...v12.3.1) (2023-09-07)
+
+
+### Bug Fixes
+
+* **zsh:** add yarn bin folder to PATH on linux ([966b191](https://github.com/dkarter/dotfiles/commit/966b191e6507b52c0eebfeb4ff5d4896f976a44b))
+
+## [12.3.0](https://github.com/dkarter/dotfiles/compare/v12.2.0...v12.3.0) (2023-08-31)
+
+
+### Features
+
+* **installer:** add reshim asdf tools task ([0b7ca10](https://github.com/dkarter/dotfiles/commit/0b7ca106c2451e858dedd11fd397e4131998b2e0))
+* **nvim:** add mappings for Diffview ([fc70e62](https://github.com/dkarter/dotfiles/commit/fc70e62b1b821a34a215cf76b1ab923b0fc6042f))
+
+## [12.2.0](https://github.com/dkarter/dotfiles/compare/v12.1.0...v12.2.0) (2023-08-14)
+
+
+### Features
+
+* **brew:** add mas - Mac App Store CLI ([238b61f](https://github.com/dkarter/dotfiles/commit/238b61fdf5f107f4e492d4999c614e78375919ac))
+* **installer:** add unicornleap installer ([1dbcb00](https://github.com/dkarter/dotfiles/commit/1dbcb007db3d961b2a09ce7bd79b341b7d836e56))
+* **installer:** set up tmux term info ([ca5da3f](https://github.com/dkarter/dotfiles/commit/ca5da3f16d8d2d766e75ad63098d3188b4544b97))
+
+
+### Bug Fixes
+
+* **fzf:** search hidden files ([e8dfdcf](https://github.com/dkarter/dotfiles/commit/e8dfdcfc057f2b4db6dce08a777e76a545d330c6))
+* **installer:** only install desktop apps when not already installed ([1d13825](https://github.com/dkarter/dotfiles/commit/1d13825a4a627d6471ebecbc0beeb3bea9c07b79))
+* **installer:** use manual install for sudo-touchid ([52be976](https://github.com/dkarter/dotfiles/commit/52be976582a5b2f7db503fa74ed1d8a610a8f5fc))
+
 ## [12.1.0](https://github.com/dkarter/dotfiles/compare/v12.0.0...v12.1.0) (2023-08-04)
 
 

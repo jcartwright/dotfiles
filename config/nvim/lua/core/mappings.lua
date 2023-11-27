@@ -167,6 +167,7 @@ M.lsp_mappings = function()
   map { { 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { buffer = true, desc = '[C]ode [A]ction' } }
   nmap { 'gr', telescope('lsp_references'), { buffer = true, desc = '[G]o to [R]eferences' } }
   nmap { 'K', vim.lsp.buf.hover, { buffer = true, desc = 'LSP Hover Doc' } }
+  nmap { '<leader>rn', vim.lsp.buf.rename, { buffer = true, desc = '[R]e[n]ame Symbol Under Cursor' } }
 end
 
 M.lsp_diagnostic_mappings = function()
@@ -343,6 +344,11 @@ M.rhubarb_mappings = {
     mode = 'v',
     desc = '[G]ithub [Y]ank selection link',
   },
+}
+
+M.diffview_mappings = {
+  { '<leader>gv', '<cmd>DiffviewFileHistory %<CR>', desc = '[G]it [V]iew (:gitv! alt)' },
+  { '<leader>gd', '<cmd>DiffviewOpen<CR>', desc = '[G]it [D]iff' },
 }
 
 M.ripgrep_mappings = {

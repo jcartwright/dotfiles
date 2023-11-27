@@ -29,7 +29,9 @@ opt.shiftwidth = indent -- Number of spaces to use for each step of (auto)indent
 opt.softtabstop = indent
 opt.expandtab = true --  Use the spaces to insert a <Tab>
 opt.shiftround = true -- Round indent to multiple of 'shiftwidth'
-opt.smartindent = true
+-- this was messing up comments starting with `#`
+-- see https://vim.fandom.com/wiki/Restoring_indent_after_typing_hash
+opt.smartindent = false
 
 -- text appearance
 opt.textwidth = 80 --  set row width size in characters
@@ -62,15 +64,6 @@ opt.showcmd = true -- show any commands
 opt.foldmethod = 'manual' -- set folds by syntax of current language
 opt.visualbell = true -- visual bell for errors
 opt.redrawtime = 5000 -- prevent vim from disabling highlighting if the code is complex
-
---Defer loading shada until after startup_
-local shadafile = opt.shadafile
-opt.shadafile = 'NONE'
-
-vim.schedule(function()
-  vim.opt.shadafile = shadafile
-  vim.cmd [[ silent! rsh ]]
-end)
 
 -- Make diffing better
 -- https://vimways.org/2018/the-power-of-diff/

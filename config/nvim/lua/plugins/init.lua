@@ -91,8 +91,9 @@ require('lazy').setup({
 
   -- Neovim as a language server to inject LSP diagnostics, code
   -- actions, and more via Lua.
+  -- This is now using the community fork: https://github.com/nvimtools/none-ls.nvim
   {
-    'jose-elias-alvarez/null-ls.nvim',
+    'nvimtools/none-ls.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -177,6 +178,7 @@ require('lazy').setup({
       },
 
       routes = {
+        -- hide buffer written messages
         {
           view = 'mini',
           filter = {
@@ -319,17 +321,21 @@ require('lazy').setup({
   --  Better syntax highlighting (and more)
   {
     'nvim-treesitter/nvim-treesitter',
-    event = { 'BufReadPost', 'BufNewFile' },
     build = ':TSUpdate',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
-      'JoosepAlviste/nvim-ts-context-commentstring',
       'RRethy/nvim-treesitter-endwise',
       'nvim-treesitter/nvim-treesitter-context',
     },
     config = function()
       require('plugins.treesitter').setup()
     end,
+  },
+
+  {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    event = { 'BufReadPre', 'BufNewFile' },
+    opts = {},
   },
 
   -- play with TreeShitter
@@ -538,30 +544,36 @@ require('lazy').setup({
   --  Indent lines (visual indication)
   {
     'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
     event = { 'BufReadPost', 'BufNewFile' },
     opts = {
-      char = '│',
-      filetype_exclude = {
-        '',
-        'alpha',
-        'NvimTree',
-        'TelescopePrompt',
-        'checkhealth',
-        'dashboard',
-        'help',
-        'lazy',
-        'lazyterm',
-        'lspinfo',
-        'man',
-        'mason',
-        'notify',
-        'nofile',
-        'qf',
-        'quickfix',
-        'terminal',
+      indent = {
+        char = '│',
       },
-      show_trailing_blankline_indent = false,
-      show_current_context = false,
+      exclude = {
+        filetypes = {
+          '',
+          'alpha',
+          'NvimTree',
+          'TelescopePrompt',
+          'checkhealth',
+          'dashboard',
+          'help',
+          'lazy',
+          'lazyterm',
+          'lspinfo',
+          'man',
+          'mason',
+          'notify',
+          'nofile',
+          'qf',
+          'quickfix',
+          'terminal',
+        },
+      },
+      scope = {
+        enabled = false,
+      },
     },
   },
 
@@ -749,10 +761,11 @@ require('lazy').setup({
       'nvim-lua/plenary.nvim',
       'nvim-tree/nvim-web-devicons',
     },
+    keys = core_mappings.diffview_mappings,
   },
 
   -- Helm Chart syntax
-  { 'towolf/vim-helm', event = { 'BufReadPost', 'BufNewFile' } },
+  { 'towolf/vim-helm', event = { 'BufReadPre', 'BufNewFile' } },
 
   -- attempt stuff using scratch buffer and pre-configured bootstrap
   {
@@ -772,11 +785,11 @@ require('lazy').setup({
   -- tmux config file stuff
   { 'tmux-plugins/vim-tmux', ft = 'tmux' },
 
-  -- seamless tmux/vim pane navigation
-  { 'christoomey/vim-tmux-navigator', event = 'VeryLazy' },
-
-  -- Resize tmux panes and Vim windows with ease.
-  { 'RyanMillerC/better-vim-tmux-resizer', event = 'VeryLazy' },
+  {
+    'aserowy/tmux.nvim',
+    event = 'VeryLazy',
+    opts = {},
+  },
 
   -- notifications
   {

@@ -25,10 +25,10 @@ M.setup = function()
       'comment',
       'cpp',
       'css',
+      'csv',
       'diff',
       'dockerfile',
       'eex',
-      -- Elixir treesitter is very slow
       'elixir',
       'elm',
       'erlang',
@@ -67,14 +67,14 @@ M.setup = function()
       'typescript',
       'vim',
       'vimdoc',
+      'xml',
       'yaml',
       'zig',
     },
     autotag = { enable = true },
     highlight = { enable = true },
-    context_commentstring = {
+    indent = {
       enable = true,
-      enable_autocmd = false,
     },
     textobjects = {
       select = {
@@ -95,8 +95,11 @@ M.setup = function()
           ['ab'] = '@block.outer',
           ['ik'] = '@comment.inner',
           ['ak'] = '@comment.outer',
+          ['is'] = '@scope.inner',
+          ['as'] = '@scope.outer',
         },
       },
+
       swap = {
         enable = true,
         swap_next = {
@@ -106,6 +109,7 @@ M.setup = function()
           ['<leader>pp'] = '@parameter.inner',
         },
       },
+
       move = {
         enable = true,
         -- whether to set jumps in the jumplist
@@ -125,6 +129,15 @@ M.setup = function()
         goto_previous_end = {
           ['[M'] = '@function.outer',
           ['[]'] = '@class.outer',
+        },
+      },
+      lsp_interop = {
+        enable = true,
+        border = 'none',
+        floating_preview_opts = {},
+        peek_definition_code = {
+          ['<leader>df'] = '@function.outer',
+          ['<leader>dF'] = '@class.outer',
         },
       },
     },

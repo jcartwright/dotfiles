@@ -60,6 +60,7 @@ GEMS = [
 ].freeze
 
 PIPS3 = [
+  'codespell', # check for spelling mistakes in code.
   'neovim', # NeoVim python3 support
   'neovim-remote', # allow controlling neovim remotely
   'yq', # like jq but for yaml files
@@ -150,10 +151,9 @@ TASKS = [
   {
     name: 'ASDF',
     sync: false,
-    confirmation: 'Install ASDF and latest tool versions?',
+    confirmation: 'Install ASDF latest tool versions?',
     callback:
       proc do
-        install_asdf
         update_asdf
         install_asdf_plugins
         install_asdf_tools
@@ -170,6 +170,12 @@ TASKS = [
         install_python_packages
         install_rust_cargos
       end,
+  },
+  {
+    name: 'Reshim ASDF tools',
+    sync: false,
+    confirmation: 'Reshim ASDF tools?',
+    callback: proc { reshim_asdf_tools },
   },
 ].freeze
 
@@ -242,12 +248,6 @@ class Installer
       rm -rf "$ZINIT_HOME" && \
       git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
     BASH
-  end
-
-  def install_asdf
-    puts '===== Installing asdf'.blue
-
-    git_install('git@github.com:asdf-vm/asdf.git', ASDF_INSTALL_DIR)
   end
 
   def update_asdf
@@ -385,6 +385,14 @@ class Installer
 
   def asdf_command(cmd)
     popen("zsh -c '. #{ASDF_INSTALL_DIR}/asdf.sh && #{cmd}'")
+  end
+
+  def reshim_asdf_tools
+    puts '===== Reshimming'.blue
+
+    ASDF_PLUGINS.each do |plugin, _url|
+      asdf_command("asdf reshim #{plugin}")
+    end
   end
 
   def link_folder(source, target)
