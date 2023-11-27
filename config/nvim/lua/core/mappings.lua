@@ -62,6 +62,12 @@ local default_opts = { noremap = true, silent = true }
 nmap { 'n', 'nzzzv' }
 nmap { 'N', 'Nzzzv' }
 
+-- save current file
+nmap { '<Leader>w', ':update <CR>', { silent = true, desc = 'Save/Update current file' } }
+
+-- close current file
+nmap { '<Leader>q', ':q <CR>', { desc = 'Close current file' } }
+
 -- rename current file
 nmap { '<Leader>mv', ":Move <C-R>=expand('%')<CR>", { desc = 'Move current file' } }
 

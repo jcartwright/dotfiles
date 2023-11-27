@@ -124,7 +124,12 @@
 [diff]
   algorithm = patience
   colorMoved = default
-
+[user]
+  name = Jason Cartwright
+  email = jason@gomalomo.com
+  signingkey = A734C80483517C0E
+[github]
+  user = jcartwright
 [pull]
   rebase = true
 
